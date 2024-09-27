@@ -1,0 +1,37 @@
+﻿title: Start
+tags:
+---
+Chief Vimes: Hello. Will you please state your name for the record?
+    -> Jacob Walls
+        Chief Vimes: Thank you. And again, for the record, you are here willingly?
+            -> Yes
+                Chief Vimes: Great, thanks. You've already been filled in, so where were you on the night of November 8th, 2023?
+                    -> I can't remember.
+                        <<jump Lie>>
+                    -> I was at home, watching a football game.
+                        <<jump Football>>
+===
+
+title: Lie
+---
+Chief Vimes: Can't remember at all? Any kind of details you can give me?
+    -> No, really, I can't remember where I was.
+        <<jump LieCont>>
+    -> Oh wait I do remember. I think I was at home. Watching a football game.
+        <<jump Football>>
+===
+
+
+title: Football
+---
+Chief Vimes: A football game. I see. And who was playing?
+    -> I think it was the Bills vs the Eagles if I remember correctly.
+        Chief Vimes: And who won this game?
+        <<jump New>>
+===
+
+title: New
+---
+Narrator: Worked!
+
+===
