@@ -1,37 +1,81 @@
 ﻿title: Start
 tags:
 ---
-Chief Vimes: Hello. Will you please state your name for the record?
-    -> Jacob Walls
-        Chief Vimes: Thank you. And again, for the record, you are here willingly?
-            -> Yes
-                Chief Vimes: Great, thanks. You've already been filled in, so where were you on the night of November 8th, 2023?
-                    -> I can't remember.
-                        <<jump Lie>>
-                    -> I was at home, watching a football game.
-                        <<jump Football>>
+Captain: We're under attack! You there, man a cannon or begin unfurling the sails!
+    -> Yes captain! (Man the cannons)
+        <<jump manCannon>>
+    -> On it captain! (Unfurl sails)
+        <<jump unfurlSails>>
 ===
 
-title: Lie
+title: manCannon
 ---
-Chief Vimes: Can't remember at all? Any kind of details you can give me?
-    -> No, really, I can't remember where I was.
-        <<jump LieCont>>
-    -> Oh wait I do remember. I think I was at home. Watching a football game.
-        <<jump Football>>
+Narrator: You head below deck to begin loading in cannon balls.
+Righthand Man: Either begin firing or load up the cannons!
+    -> Start loading cannon balls
+        <<jump Loading>>
+    -> Fire at will!
+        <<jump Fire>>
 ===
 
-
-title: Football
+title: unfurlSails
 ---
-Chief Vimes: A football game. I see. And who was playing?
-    -> I think it was the Bills vs the Eagles if I remember correctly.
-        Chief Vimes: And who won this game?
-        <<jump New>>
+Narrator: You run across the deck to begin unfurling the rope spools.
+Captain: Faster! Either do the Square sail or the Fore sail! The fore sail will get us out of here quicker!
+    -> Start unfurling the Fore sail
+        <<jump foreSail>>
+    -> Start with the Square sail
+        <<jump squareSail>>
 ===
 
-title: New
+title: Loading
 ---
-Narrator: Worked!
-
+Narrator: You begin loading up all of the cannons with cannon balls. Your crewmates begin to fire at will.
+    Righthand Man: Faster! Start firing!
+        -> Man a cannon
+            <<jump Fire>>
 ===
+
+title: Fire
+---
+Narrator: You equip yourself on a cannon and begin firing
+Righthand Man: Fire at will! Shoot the enemy ship into the sea! Their hull is already damaged!
+    -> Aim your cannon at the hull
+        <<jump Victory>>
+    -> Aim your cannon at the crows nest
+        <<jump Failure>>
+===
+
+title: foreSail
+---
+Narrator: You begin unfurling the Fore sail.
+Captain: Keep unfurling that sail!
+    -> Finish unfurling the fore sail
+        <<jump Victory>>
+    -> Switch to the square sail
+        <<jump squareSail>>
+===
+
+title: squareSail
+---
+Narrator: You begin unfurling the Square sail.
+Captain: Keep unfurling the sails!
+    -> Finish unfurling the square sail
+        Captain: That's not enough! Unfurl the fore sail!
+            <<jump foreSail>>
+    -> Switch to the fore sail
+        <<jump foreSail>>
+===
+
+title: Victory
+---
+Captain: Well done lads! Victory is ours.
+Narrator: Whether by hull damage or losing in a contest of speed, your ship is the last one remaining.
+===
+
+title: Failure
+---
+Captain: Jump overboard! Save yourselves!
+Narrator: Without escape or dealing proper damage, your ship is hit too hard to recover. 
+===
+
